@@ -1,5 +1,7 @@
 index.html style.css home page
+
 result.html style1.css result page
+
 error.html error.css error page bhal 404 page not found rani 3ad na5dam 3liha
 
 -------main.go--------
