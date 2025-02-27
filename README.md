@@ -1,0 +1,1 @@
+<textarea id = "text" name="Ascii-art" id="Ascii-art" cols="50" rows="50" required aria-checked="undefined"></textarea>

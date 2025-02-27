@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Web</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <!-- Display an error notification if ErrorMessage is set -->
+    {{if .ErrorMessage}}
+      <div class="error-notification">
+        <p>🚫 {{.ErrorMessage}}</p>
+      </div>
+    {{end}}
+    <form action="/ascii-art" method="POST">
+        <header>
+            <select name="banner" class="corner top-left">
+                <option value="standard">Standard</option>
+                <option value="shadow">Shadow</option>
+                <option value="thinkertoy">Thinkertoy</option>
+            </select>
+        </header>
+        <div class="typewriter">
+            <div>
+                <p>ASCII-ART GENERATOR</p>
+            </div>
+        </div>
+        <footer>
+
+            <div class="box rounded-3xl place">
+
+                <textarea name="text" class="Text" placeholder="Type Something   " rows="5" cols="33"></textarea>
+                <button class="oo"><img src="../static/5.png"></button>
+
+            </div>
+        </footer>
+    </form>
+</body>
+
+</html>
