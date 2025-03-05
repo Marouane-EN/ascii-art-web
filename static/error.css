@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    background: #212121;
+    /* Allows absolute positioning for corners */
+}
+
+h1 {
+    color: white;
+    margin: 20px;
+    font-size: 90px;
+}
+p {
+    color: white;
+    margin: 20px;
+    font-size: 50px;
+}

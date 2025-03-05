@@ -1,0 +1,165 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  background: #212121;
+  position: relative;
+  /* Allows absolute positioning for corners */
+}
+
+
+/* Text in Corners */
+.corner {
+  position: absolute;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  font-size: 25px;
+  color: white;
+  background: #212121;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.error-notification{
+  position: absolute;
+  top: 0;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EF665B;
+  color: #ffffff;
+  padding: 10px; 
+  border-radius: 8px;
+  animation: down 1s ease-in;
+}
+@keyframes down{
+  from{
+    top: -15%;
+  }
+}
+
+.typewriter {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 100px;
+}
+
+.typewriter p {
+  color: white;
+  font-family: monospace;
+  font-size: 1.875rem;
+  font-weight: 600;
+
+  margin-inline: auto;
+  overflow: hidden;
+  /*keeps on a single line*/
+  white-space: nowrap;
+  /*the cursor*/
+  border-right: 1px solid;
+  animation: typing 3s steps(20) forwards, blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.TextContainer {
+  background-color: #303030;
+
+  max-width: 700px;
+  /* Do not exceed 500px */
+  min-height: 200px;
+  /* Set a minimum height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .typewriter p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .TextContainer {
+    width: 700px;
+  }
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.Text {
+  background-color: #303030;
+  color: #f1efef;
+  
+  width: 100%;
+  height: calc(100%-10%);
+  border: 0;
+  margin-right: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  outline: none;
+  font-display: 50%;
+  font-weight: 500;
+  font-size: 16px;
+  resize: none;
+  line-height: 1.5;
+}
+
+.Text::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Text::-webkit-scrollbar-track {
+  background: #303030;
+}
+
+.Text::-webkit-scrollbar-thumb {
+  background: #424242;
+  height: 50px;
+  border-radius: 100vw;
+}
+
+.Text::-webkit-scrollbar-thumb:hover {
+  background: #676767;
+}
+
+.button {
+  background-color: #303030;
+  border: 0;
+  margin: 10px;
+  outline: none;
+}
