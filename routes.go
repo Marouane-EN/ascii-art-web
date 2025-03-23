@@ -51,7 +51,7 @@ func asciiArtHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if fileExists("banners/" + banner + ".txt") {
+	if fileNotExists("banners/" + banner + ".txt") {
 		sendErrorPage(w, http.StatusNotFound, "Banner not found!")
 		return
 	}
@@ -66,9 +66,9 @@ func asciiArtHandler(w http.ResponseWriter, r *http.Request) {
 	// Process ASCII Art
 	textLines := strings.Split(inputText, "\r\n")
 	asciiArt := ConvertToAscii(textLines, banner)
-	
+
 	outputPage = "output.html"
-	
+
 	renderResultPage(w, &PageData{AsciiArt: asciiArt}, outputPage)
 }
 
@@ -80,8 +80,12 @@ func StaticHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	url := r.URL.Path[1:] // Remove leading slash
-	if fileExists(url) {
-		sendErrorPage(w, http.StatusNotFound, "Static file not found")
+	if url == "static/" {
+		sendErrorPage(w, http.StatusNotFound, "Oops! Page not found")
+		return
+	}
+	if fileNotExists(url) {
+		sendErrorPage(w, http.StatusNotFound, "Oops! Page not found")
 		return
 	}
 
@@ -95,6 +99,7 @@ func renderResultPage(w http.ResponseWriter, data *PageData, templateName string
 		sendErrorPage(w, http.StatusInternalServerError, "Oops! Something went wrong.")
 		return
 	}
+
 	tmpl.Execute(w, data)
 }
 
@@ -110,5 +115,4 @@ func sendErrorPage(w http.ResponseWriter, code int, message string, page ...stri
 		Code:         code,
 		ErrorMessage: message,
 	}, errorPage)
-
 }

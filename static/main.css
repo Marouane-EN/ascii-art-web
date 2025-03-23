@@ -1,165 +1,173 @@
-/* Reset styles */
+/* Reset styles: Removes default margin, padding, and applies box-sizing */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;  
+  padding: 0;        
+  box-sizing: border-box; 
 }
 
+/* Body: full height and centered content */
 body {
-  height: 100vh;
-  display: flex;
+  height: 100vh; 
+  display: flex; 
   justify-content: center;
-  /* Center horizontally */
-  align-items: center;
-  /* Center vertically */
-  background: #212121;
-  position: relative;
-  /* Allows absolute positioning for corners */
+  align-items: center;  
+  background: #212121;   
+  position: relative; 
 }
 
-
-/* Text in Corners */
+/* Text in corners (e.g., dropdown for banner selection) */
 .corner {
-  position: absolute;
-  padding: 10px;
-  border: 0;
-  outline: none;
-  font-size: 25px;
+  position: absolute; 
+  padding: 10px; 
+  border: 0; 
+  outline: none; 
+  font-size: 25px; 
   color: white;
   background: #212121;
 }
 
+/* Position the corner element in the top-left */
 .top-left {
-  top: 0;
-  left: 0;
+  top: 0; 
+  left: 0;  
 }
 
-.error-notification{
-  position: absolute;
-  top: 0;
-  margin-top: 50px;
+/* Error notification: Displays errors with animation */
+.error-notification {
+  position: absolute; 
+  top: 0;  
+  margin-top: 50px; 
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #EF665B;
-  color: #ffffff;
-  padding: 10px; 
-  border-radius: 8px;
-  animation: down 1s ease-in;
+  align-items: center; 
+  background-color: #EF665B; 
+  color: #ffffff;    
+  padding: 10px;         
+  border-radius: 8px;     
+  animation: slides-down  1s ease-in; 
 }
-@keyframes down{
-  from{
-    top: -15%;
+
+/* Error notification animation (slides down from above) */
+@keyframes slides-down {
+  from {
+    top: -15%; 
   }
 }
 
+/* Typewriter: Contains animated text in the center */
 .typewriter {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  bottom: 100px;
+  display: flex;       
+  justify-content: center; 
+  position: relative;  
+  bottom: 100px;      
 }
 
+/* Typewriter text animation */
 .typewriter p {
-  color: white;
-  font-family: monospace;
-  font-size: 1.875rem;
-  font-weight: 600;
-
-  margin-inline: auto;
-  overflow: hidden;
-  /*keeps on a single line*/
-  white-space: nowrap;
-  /*the cursor*/
-  border-right: 1px solid;
-  animation: typing 3s steps(20) forwards, blink 1s step-end infinite;
+  color: white;        
+  font-family: monospace;    
+  font-size: 1.875rem;    
+  font-weight: 600;       
+  margin-inline: auto;    
+  overflow: hidden;       
+  white-space: nowrap;       
+  border-right: 1px solid;   
+  animation: typing 3s steps(20) forwards, 
+             blink 1s step-end infinite;   
 }
 
+/* Typing animation: Simulates text being typed */
 @keyframes typing {
   from {
-    width: 0px;
+    width: 0; 
   }
-
   to {
-    width: 100%;
+    width: 100%; 
   }
 }
 
+/* Blinking cursor animation */
 @keyframes blink {
   50% {
-    border-color: transparent;
+    border-color: transparent; 
   }
 }
 
+/* Container for the textarea and submit button */
 .TextContainer {
-  background-color: #303030;
-
-  max-width: 700px;
-  /* Do not exceed 500px */
-  min-height: 200px;
-  /* Set a minimum height */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  background-color: #303030; 
+  max-width: 700px;   
+  min-height: 200px;  
+  display: flex;         
+  justify-content: space-between; 
+  align-items: center;  
+  position: relative; 
 }
 
+/* Responsive adjustment for small screens (max width: 600px) */
 @media (max-width: 600px) {
   .typewriter p {
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
   }
 }
 
+/* Adjustments for larger screens (min width: 700px) */
 @media (min-width: 700px) {
   .TextContainer {
     width: 700px;
   }
 }
 
+/* Utility class: Large border-radius for rounded corners */
 .rounded-3xl {
   border-radius: 1.5rem;
 }
 
+/* Text input box styling */
 .Text {
-  background-color: #303030;
-  color: #f1efef;
-  
-  width: 100%;
-  height: calc(100%-10%);
-  border: 0;
-  margin-right: 20px;
-  margin-left: 30px;
-  margin-bottom: 30px;
-  margin-top: 25px;
-  outline: none;
-  font-display: 50%;
-  font-weight: 500;
-  font-size: 16px;
-  resize: none;
-  line-height: 1.5;
+  background-color: #303030; 
+  color: #f1efef;        
+  width: 100%;             
+  height: calc(100% - 10%);  
+  border: 0;        
+  margin-right: 20px; 
+  margin-left: 30px;    
+  margin-bottom: 30px;   
+  margin-top: 25px;      
+  outline: none;     
+  font-display: 50%;  
+  font-weight: 500;     
+  font-size: 16px;        
+  resize: none;     
+  line-height: 1.5;    
 }
 
-.Text::-webkit-scrollbar {
-  width: 10px;
+/* Custom scrollbar styling (Webkit browsers) */
+::-webkit-scrollbar {
+  width: 10px; 
 }
 
-.Text::-webkit-scrollbar-track {
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
   background: #303030;
 }
 
-.Text::-webkit-scrollbar-thumb {
-  background: #424242;
-  height: 50px;
-  border-radius: 100vw;
+/* Handle (movable part) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #424242;    
+  height: 50px;            
+  border-radius: 100vw;   
 }
 
-.Text::-webkit-scrollbar-thumb:hover {
-  background: #676767;
+/* Hover state for the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #676767; 
 }
 
+/* Submit button styling */
 .button {
   background-color: #303030;
-  border: 0;
-  margin: 10px;
-  outline: none;
+  border: 0;       
+  margin: 10px;    
+  outline: none;        
 }

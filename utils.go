@@ -17,7 +17,7 @@ func IsPrintable(text string) bool {
 }
 
 // Helper: Checks if a file exists.
-func fileExists(path string) bool {
+func fileNotExists(path string) bool {
 	_, err := os.Stat(path)
 	return os.IsNotExist(err)
 }

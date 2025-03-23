@@ -19,7 +19,7 @@ func main() {
 	// Route for ASCII art generation (POST)
 	http.HandleFunc("/ascii-art", asciiArtHandler)
 	http.HandleFunc("/ascii-art1", asciiArtHandler)
-	port := ":8020"
+	port := ":8080"
 	fmt.Printf("🚀 Server running at http://localhost%s\n", port)
 	if err := http.ListenAndServe(port, nil); err != nil {
 		fmt.Println("❌ Error starting server:", err)
